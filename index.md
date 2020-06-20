@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "mayatideway"
+title: mayatideway
 ---
 
 <-- image not shown -->
