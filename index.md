@@ -1,6 +1,6 @@
 ---
 layout: default
-title: mayatideway
+title: home
 ---
 
 <-- image not shown -->
