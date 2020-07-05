@@ -4,3 +4,4 @@ title: "mayatideway" # the name of your site, e.g. ACME Corp.
 exclude:
   - Makefile
   - NOTES.org
+bucket: http://mayatideway.us-east-1.linodeobjects.com
