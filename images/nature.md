@@ -3,4 +3,6 @@ layout: default
 title: nature
 ---
 
-<img class="img-fluid" src="http://mayatideway.us-east-1.linodeobjects.com/flower.jpg" alt="photograph of a rose"/>
+{% for image in site.data.nature %}
+  <img class="img-fluid" src="{{ site.bucket }}/{{ image.name }}" alt="{{ image.alt-text }}"/>
+{% endfor %}
