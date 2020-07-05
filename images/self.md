@@ -3,4 +3,4 @@ layout: default
 title: self
 ---
 
-Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
+<img class="img-fluid" src="http://mayatideway.us-east-1.linodeobjects.com/self.jpg" alt="photograph of a man sitting on the floor with his back to the camera, with light filtered through a venetian blind cast onto his back"/>
