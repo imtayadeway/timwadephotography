@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+require "fileutils"
+require "bundler/setup"
+require "mini_exiftool"
+
+HELP = <<~EOF
+  Usage: bin/date-jpeg <file.jpg>
+EOF
+
+class Photo
+  DATED_FILENAME_REGEX = /\A\d{4}-\d{2}-\d{2}/
+
+  def initialize(in_filename)
+    @in_filename = in_filename
+  end
+
+  def date
+    return if in_filename =~ DATED_FILENAME_REGEX
+    FileUtils.mv(in_filename, out_filename)
+  end
+
+  private
+
+  attr_reader :in_filename
+
+  def out_filename
+    [date_taken.strftime("%Y-%m-%d"), in_filename].join("-")
+  end
+
+  def date_taken
+    exif.datetimeoriginal
+  end
+
+  def exif
+    @exif ||= MiniExiftool.new(in_filename)
+  end
+end
+
+if ARGV[0]
+  Photo.new(ARGV[0])
+else
+  puts HELP
+end

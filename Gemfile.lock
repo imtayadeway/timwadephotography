@@ -42,6 +42,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mini_exiftool (2.10.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.5)
@@ -62,6 +63,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  mini_exiftool
 
 RUBY VERSION
    ruby 2.6.3p62
