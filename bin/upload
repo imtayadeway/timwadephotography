@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+# 1. resize -> tmp
+# 2. prepend date
+# 3. gather alt-text, category
+# 4. upload using linode-cli
+# 5. insert into manifest
