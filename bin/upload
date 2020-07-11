@@ -1,7 +1,24 @@
 #!/usr/bin/env ruby
 
-# 1. resize -> tmp
-# 2. prepend date
-# 3. gather alt-text, category
-# 4. upload using linode-cli
-# 5. insert into manifest
+$LOAD_PATH << File.join(__dir__, "..", "lib")
+require "mayatideway"
+
+HELP = <<~EOF
+  Usage: bin/upload <file.jpg>
+EOF
+
+if path = ARGV[0]
+  system("jp2a --background=dark --width=100 --border #{path}")
+  print "category: "
+  category = STDIN.gets.chomp
+  print "description: "
+  alt_text = STDIN.gets.chomp
+  Mayatideway::Photo.new(
+    path: path,
+    category: category,
+    alt_text: alt_text,
+  ).upload
+else
+  puts HELP
+  exit 1
+end
