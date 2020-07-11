@@ -1,16 +1,18 @@
 require "fileutils"
 require "bundler/setup"
 require "mini_exiftool"
+require "yaml"
 
 module Mayatideway
   class Photo
     BUCKET_NAME = "mayatideway"
-    DATED_FILENAME_REGEX = /\A\d{4}-\d{2}-\d{2}/
     TMP_DIR = File.expand_path(File.join(__dir__, "..", "..", "tmp"))
+    DATA_DIR = File.expand_path(File.join(__dir__, "..", "..", "_data"))
 
-    attr_reader :path
+    attr_reader :alt_text, :category, :name, :path
 
-    def initialize(path:, alt_text:, category:)
+    def initialize(name:, path:, alt_text:, category:)
+      @name = name
       @path = path
       @alt_text = alt_text
       @category = category
@@ -54,15 +56,15 @@ module Mayatideway
     end
 
     def tmp_filename
-      if in_filename =~ DATED_FILENAME_REGEX
-        in_filename
-      else
-        [date_taken.strftime("%Y-%m-%d"), in_filename].join("-")
-      end
+      [date_taken.strftime("%Y-%m-%d"), out_filename].join("-")
     end
 
     def in_filename
       File.basename(path)
+    end
+
+    def out_filename
+      "#{name}.jpg"
     end
 
     def date_taken
@@ -79,7 +81,19 @@ module Mayatideway
     end
 
     def add_to_manifest
-      "nope"
+      data = begin
+               YAML.load_file(manifest_path, fallback: [])
+             rescue
+               []
+             end
+      data << { name: out_filename, :"alt-text" => alt_text }
+      File.open(manifest_path, "w") do |file|
+        file.write(YAML.dump(data.sort_by { |hash| hash[:name] }))
+      end
+    end
+
+    def manifest_path
+      File.join(DATA_DIR, "#{category}.yml")
     end
 
     def cleanup
