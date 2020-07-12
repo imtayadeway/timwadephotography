@@ -68,7 +68,7 @@ module Mayatideway
     end
 
     def date_taken
-      exif.datetimeoriginal
+      exif.datetimeoriginal || exif.filemodifydate
     end
 
     def exif
