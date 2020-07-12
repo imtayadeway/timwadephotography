@@ -3,6 +3,10 @@ require "bundler/setup"
 require "mini_exiftool"
 require "yaml"
 
+# TODO:
+# 1. refactor
+# 2. must --force to overrite existing
+
 module Mayatideway
   class Photo
     BUCKET_NAME = "mayatideway"
