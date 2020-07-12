@@ -76,7 +76,6 @@ module Mayatideway
     end
 
     def do_upload
-      return "nope"
       system("linode-cli obj put --acl-public #{tmp_path} #{BUCKET_NAME}")
     end
 
