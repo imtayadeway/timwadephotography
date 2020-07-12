@@ -89,7 +89,7 @@ module Mayatideway
       data << { "name" => tmp_filename, "alt-text" => alt_text }
 
       File.open(manifest_path, "w") do |file|
-        file.write(YAML.dump(data.sort_by { |hash| hash["name"] }))
+        file.write(YAML.dump(data.sort_by { |hash| hash["name"] }.reverse))
       end
     end
 
