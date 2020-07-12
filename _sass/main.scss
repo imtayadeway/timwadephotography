@@ -1,3 +1,10 @@
 .main {
   margin-top: 5%;
 }
+
+a {
+  color: #fff;
+  &:hover {
+    color: #888;
+  }
+}
