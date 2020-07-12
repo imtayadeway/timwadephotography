@@ -85,9 +85,11 @@ module Mayatideway
              rescue
                []
              end
-      data << { name: out_filename, :"alt-text" => alt_text }
+
+      data << { "name" => tmp_filename, "alt-text" => alt_text }
+
       File.open(manifest_path, "w") do |file|
-        file.write(YAML.dump(data.sort_by { |hash| hash[:name] }))
+        file.write(YAML.dump(data.sort_by { |hash| hash["name"] }))
       end
     end
 
