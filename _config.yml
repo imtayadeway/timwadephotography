@@ -2,6 +2,10 @@ url: "mayatideway.com" # the base hostname & protocol for your site, e.g. http:/
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "mayatideway" # the name of your site, e.g. ACME Corp.
 exclude:
+  - bin
+  - lib
   - Makefile
   - NOTES.org
+  - test
+  - tmp
 bucket_url: https://mayatideway.us-east-1.linodeobjects.com
