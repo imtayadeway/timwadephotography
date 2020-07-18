@@ -15,12 +15,12 @@ if path = ARGV[0]
   category = STDIN.gets.chomp
   print "description: "
   alt_text = STDIN.gets.chomp
-  Mayatideway::Photo.new(
+  Mayatideway.upload(
     name: name,
     path: path,
     category: category,
     alt_text: alt_text,
-  ).upload
+  )
 else
   puts HELP
   exit 1
