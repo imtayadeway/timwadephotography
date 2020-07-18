@@ -1,5 +1,8 @@
 require "bundler/setup"
+require "mayatideway/linode_client"
+require "mayatideway/manifest"
 require "mayatideway/photo"
+require "mayatideway/resizer"
 
 module Mayatideway
   BUCKET_NAME = "mayatideway"
@@ -13,7 +16,7 @@ module Mayatideway
 
     photo = Photo.new(name: name, path: path, alt_text: alt_text)
 
-    resizer = Resizer.new(photo: photo).resize
+    resizer = Resizer.new(photo: photo)
     resized = resizer.resize
 
     if !force && manifest.include?(resized)
@@ -23,8 +26,25 @@ module Mayatideway
     client = LinodeClient.new(bucket: BUCKET_NAME)
     client.put(path: photo.path)
 
-    manifest.add(photo: photo)
+    manifest.add(photo: resized)
 
     resizer.cleanup
+  end
+
+  def self.rename(old_name:, new_name:, category:)
+    manifest = Manifest.new(category: category)
+
+    client = LinodeClient.new(bucket: BUCKET_NAME)
+    photo = client.get(name: old_name) # --> tmp
+
+    renamer = Renamer.new(photo: photo, name: new_name)
+
+    client.put(path: photo.path)
+
+    manifest.rename(from: old_name, to: new_name)
+
+    client.delete(name: old_name)
+
+    rename.cleanup
   end
 end

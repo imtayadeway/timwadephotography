@@ -2,11 +2,11 @@ require "fileutils"
 
 module Mayatideway
   class Resizer
-    COMMAND = lambda do |in, out|
+    COMMAND = lambda do |infn, outfn|
       <<~EOF
         gimp --no-interface \
-             --batch="(let* ((in-filename \\"#{in}\\")
-                            (out-filename \\"#{out}\\")
+             --batch="(let* ((in-filename \\"#{infn}\\")
+                            (out-filename \\"#{outfn}\\")
                             (image (car (gimp-file-load RUN-NONINTERACTIVE in-filename in-filename)))
                             (drawable (car (gimp-image-get-active-layer image)))
                             (old-width (car (gimp-image-width image)))
@@ -21,6 +21,8 @@ module Mayatideway
       EOF
     end
 
+    attr_reader :photo
+
     def initialize(photo:)
       @photo = photo
     end
@@ -29,10 +31,9 @@ module Mayatideway
       ensure_tmp_dir
       resize_to_tmp
       Photo.new(
-        name: photo.name,
+        name: cloud_filename,
         path: tmp_path,
-        alt_text: photo.alt_text,
-        category: photo.category
+        alt_text: photo.alt_text
       )
     end
 
@@ -41,7 +42,7 @@ module Mayatideway
     end
 
     def tmp_path
-      File.join(TMP_DIR, photo.cloud_filename)
+      File.join(TMP_DIR, cloud_filename)
     end
 
     def cloud_filename

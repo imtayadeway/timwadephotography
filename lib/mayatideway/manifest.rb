@@ -15,7 +15,7 @@ module Mayatideway
                []
              end
 
-      data << { "name" => photo.basename, "alt-text" => photo.alt_text }
+      data << { "name" => photo.name, "alt-text" => photo.alt_text }
 
       File.open(manifest_path, "w") do |file|
         file.write(YAML.dump(data.sort_by { |hash| hash["name"] }.reverse))
@@ -28,7 +28,7 @@ module Mayatideway
              rescue
                []
              end
-      data.any? { |d| d["name"] == photo.base_name }
+      data.any? { |d| d["name"] == photo.basename }
     end
 
     def manifest_path
