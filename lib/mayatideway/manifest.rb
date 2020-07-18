@@ -8,7 +8,16 @@ module Mayatideway
       @category = category
     end
 
-    def add(photo: photo)
+    def find(name:)
+      data = begin
+               YAML.load_file(manifest_path, fallback: [])
+             rescue
+               []
+             end
+      data.detect { |d| d["name"] == name }
+    end
+
+    def add(photo:)
       data = begin
                YAML.load_file(manifest_path, fallback: [])
              rescue
@@ -17,6 +26,18 @@ module Mayatideway
 
       data << { "name" => photo.name, "alt-text" => photo.alt_text }
 
+      File.open(manifest_path, "w") do |file|
+        file.write(YAML.dump(data.sort_by { |hash| hash["name"] }.reverse))
+      end
+    end
+
+    def rename(from:, to:)
+      data = begin
+               YAML.load_file(manifest_path, fallback: [])
+             rescue
+               []
+             end
+      data.detect { |d| d["name"] == from }["name"] = to
       File.open(manifest_path, "w") do |file|
         file.write(YAML.dump(data.sort_by { |hash| hash["name"] }.reverse))
       end

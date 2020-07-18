@@ -35,9 +35,13 @@ module Mayatideway
     manifest = Manifest.new(category: category)
 
     client = LinodeClient.new(bucket: BUCKET_NAME)
-    photo = client.get(name: old_name) # --> tmp
+    client.get(name: old_name, as: new_name)
 
-    renamer = Renamer.new(photo: photo, name: new_name)
+    photo = Photo.new(
+      name: old_name,
+      path: File.join(TMP_DIR, old_name),
+      alt_text: manifest.find(name: old_name)["alt-text"]
+    )
 
     client.put(path: photo.path)
 
@@ -45,6 +49,6 @@ module Mayatideway
 
     client.delete(name: old_name)
 
-    rename.cleanup
+    # TODO: cleanup
   end
 end

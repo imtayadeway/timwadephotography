@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << File.join(__dir__, "..", "lib")
+require "mayatideway"
+
+HELP = <<~EOF
+  Usage: bin/rename <category> <old.jpg> <new.jpg>
+EOF
+
+if (0..2).map { |n| ARGV[n] }.none?(&:nil?)
+  Mayatideway.rename(
+    category: ARGV[0],
+    old_name: ARGV[1],
+    new_name: ARGV[2]
+  )
+else
+  puts HELP
+  exit 1
+end
