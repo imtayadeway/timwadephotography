@@ -1,0 +1,34 @@
+<!-- Pagination links -->
+<nav aria-label="Pagination">
+  <ul class="pagination justify-content-center">
+    {% for words in site.words %}
+      {% if page.title == words.title %}
+        {% assign next = forloop.index0 | minus: 1  %}
+        {% assign previous = forloop.index0 | plus: 1 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if page.title != site.words.last.title %}
+      <li class="page-item">
+        <a class="page-link" href="{{ site.words[previous].url }}">
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">
+    {% endif %}
+        &larr; newer
+      </a>
+    </li>
+
+    {% if page.title != site.words.first.title %}
+      <li class="page-item">
+        <a class="page-link" href="{{ site.words[next].url }}">
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">
+    {% endif %}
+        older &rarr;
+      </a>
+    </li>
+  </ul>
+</nav>
