@@ -22,6 +22,15 @@ module Mayatideway
       end
     end
 
+    def include?(photo)
+      data = begin
+               YAML.load_file(manifest_path, fallback: [])
+             rescue
+               []
+             end
+      data.any? { |d| d["name"] == photo.base_name }
+    end
+
     def manifest_path
       File.join(DATA_DIR, "#{category}.yml")
     end

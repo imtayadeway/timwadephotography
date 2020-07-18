@@ -6,19 +6,24 @@ module Mayatideway
   TMP_DIR = File.expand_path(File.join(__dir__, "..", "tmp"))
   DATA_DIR = File.expand_path(File.join(__dir__, "..", "_data"))
 
-  # TODO:
-  # 1. refactor
-  # 2. must --force to overrite existing
-  def self.upload(name:, path:, alt_text:, category:)
+  AlreadyExists = Class.new(StandardError)
+
+  def self.upload(name:, path:, alt_text:, category:, force: false)
+    manifest = Manifest.new(category: category)
+
     photo = Photo.new(name: name, path: path, alt_text: alt_text)
 
     resizer = Resizer.new(photo: photo).resize
     resized = resizer.resize
 
+    if !force && manifest.include?(resized)
+      raise AlreadyExists
+    end
+
     client = LinodeClient.new(bucket: BUCKET_NAME)
     client.put(path: photo.path)
 
-    Manifest.new(category: category).add(photo: photo)
+    manifest.add(photo: photo)
 
     resizer.cleanup
   end
