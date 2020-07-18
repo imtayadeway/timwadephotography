@@ -9,3 +9,6 @@ exclude:
   - test
   - tmp
 bucket_url: https://mayatideway.us-east-1.linodeobjects.com
+collections:
+  words:
+    output: true
