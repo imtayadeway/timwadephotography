@@ -38,8 +38,8 @@ module Mayatideway
     client.get(name: old_name, as: new_name)
 
     photo = Photo.new(
-      name: old_name,
-      path: File.join(TMP_DIR, old_name),
+      name: new_name,
+      path: File.join(TMP_DIR, new_name),
       alt_text: manifest.find(name: old_name)["alt-text"]
     )
 
