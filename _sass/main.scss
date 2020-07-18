@@ -14,3 +14,14 @@ a {
     color: #888;
   }
 }
+
+.page-link {
+  background-color: #444;
+  &:hover {
+    background-color: #313131;
+  }
+}
+
+.page-item.disabled .page-link {
+  background-color: #313131;
+}
