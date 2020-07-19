@@ -20,6 +20,7 @@ if path = ARGV[0]
     path: path,
     category: category,
     alt_text: alt_text,
+    force: ARGV.include?("--force")
   )
 else
   puts HELP

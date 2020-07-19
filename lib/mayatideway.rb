@@ -24,7 +24,7 @@ module Mayatideway
     end
 
     client = LinodeClient.new(bucket: BUCKET_NAME)
-    client.put(path: photo.path)
+    client.put(path: resized.path)
 
     manifest.add(photo: resized)
 
