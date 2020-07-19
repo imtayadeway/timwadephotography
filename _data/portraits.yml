@@ -1,6 +1,4 @@
 ---
-- name: 2020-07-05-amanda-bubbles-hammock.jpg
-  alt-text: a photograph of a woman sleeping in a hammock with a labrador in her arms
 - name: 2020-05-23-amanda-rhodedendron-glass-1.jpg
   alt-text: a photograph of a woman looking out of a window with rhodedendron blossom
     reflecting in the glass
@@ -10,3 +8,5 @@
 - name: 2019-11-11-amanda-prism-light.jpg
   alt-text: a photograph of a woman's head and shoulders, nude, with eyes closed and
     refracted light superimposed onto parts of the image
+- name: 2018-10-23-amanda-bubbles-hammock.jpg
+  alt-text: a photograph of a woman sleeping in a hammock with a labrador in her arms
