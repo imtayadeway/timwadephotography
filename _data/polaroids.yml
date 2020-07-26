@@ -1,6 +1,19 @@
 ---
+- name: 2020-02-24-amanda-ktown-profile.jpg
+  alt-text: a photograph of a woman in strong direct light against a dark background,
+    in profile, her eyes closed
 - name: 2020-02-24-amanda-k-town.jpg
   alt-text: a headshot of a woman in strong sunlight on a dark background
 - name: 2020-02-24-amanda-jtree.jpg
   alt-text: a photograph of a woman in a floral print shirt sitting in the sun outside
     a cabin in the desert
+- name: 2020-02-24-amanda-jtree-tears.jpg
+  alt-text: a photograph of a woman with tears in one eye in the desert with joshua
+    trees visible in the background
+- name: 2020-02-24-amanda-jtree-hand-mirror.jpg
+  alt-text: a photograph of a hand mirror held up against the background of a desert,
+    a woman's face visible in the reflection
+- name: 2020-02-24-amanda-29-palms-coffee.jpg
+  alt-text: a photograph of a woman wrapped in a blanket, crouched against a pink
+    brick wall, in a patch of strong sunlight, clutching a cup of coffee in one hand,
+    her eyes closed
