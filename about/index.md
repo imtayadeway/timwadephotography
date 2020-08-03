@@ -3,4 +3,4 @@ layout: default
 title: "about"
 ---
 
-Maya is an artist from Portland, Oregon, working in film photography, music, and the written word.
+Maya Tideway is an artist from Portland, Oregon, working in film photography, music, and the written word.
