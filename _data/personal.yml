@@ -1,7 +1,4 @@
 ---
-- name: 2020-07-05-bubbles-1000-acres.jpg
-  alt-text: a photograph of a chocolate labrador prancing in an open field on a summer's
-    day
 - name: 2020-02-24-29-palms-inn-swimming-pool-purple.jpg
   alt-text: a photograph of a swimming pool in the morning light with deck chairs
     and the wall behind it reflected on the surface, with strong pinks and greens
@@ -10,3 +7,6 @@
   alt-text: a photograph of a woman, asleep, wrapped in a blanket, on a bed up against
     a window, mostly in darkness, with a view through the window of the desert in
     the morning sun
+- name: 2019-09-24-bubbles-1000-acres.jpg
+  alt-text: a photograph of a chocolate labrador prancing in an open field on a summer's
+    day
