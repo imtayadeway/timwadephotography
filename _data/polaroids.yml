@@ -1,7 +1,20 @@
 ---
+- name: 2020-02-24-amanda-ktown-thoughtful.jpg
+  alt-text: a photograph of a woman laying with her head in her hands, looking thoughtfully
+    to a point outside the frame
 - name: 2020-02-24-amanda-ktown-profile.jpg
   alt-text: a photograph of a woman in strong direct light against a dark background,
     in profile, her eyes closed
+- name: 2020-02-24-amanda-ktown-chair-shadows-vase.jpg
+  alt-text: a photograph of a woman sitting in a chair up against a bare concrete
+    wall, in strong sun, shadows cast around her and slightly obscuring the right
+    side of her body, knees drawn into her chest, wearing only some blue underwear,
+    smiling peacefully and looking directly at the camera, a small orange vase visible
+    in the frame on a shelf to her left
+- name: 2020-02-24-amanda-ktown-chair-lamp-shadows.jpg
+  alt-text: a photograph of a woman in blue underwear, sitting in a chair sideways
+    with her knees drawn to her chest, one arm resting on the chair back, in strong
+    sun, framed by some shadows cast by the window frame, a standing lamp
 - name: 2020-02-24-amanda-k-town.jpg
   alt-text: a headshot of a woman in strong sunlight on a dark background
 - name: 2020-02-24-amanda-jtree.jpg
@@ -10,9 +23,24 @@
 - name: 2020-02-24-amanda-jtree-tears.jpg
   alt-text: a photograph of a woman with tears in one eye in the desert with joshua
     trees visible in the background
+- name: 2020-02-24-amanda-jtree-rocks-dress.jpg
+  alt-text: a photograph of a woman in a light colored dress, standing in the desert
+    in front of some rocks, joshua trees visible in the background, looking down and
+    to the side in thought
+- name: 2020-02-24-amanda-jtree-head-in-arms.jpg
+  alt-text: a photograph of a woman sitting in front of a cabin in full sun, her eyes
+    closed and her hands supporting the back of her head
 - name: 2020-02-24-amanda-jtree-hand-mirror.jpg
   alt-text: a photograph of a hand mirror held up against the background of a desert,
     a woman's face visible in the reflection
+- name: 2020-02-24-amanda-jtree-hand-mirror-2.jpg
+  alt-text: a photograph of a woman among some desert brush, with a wooden hand mirror
+    held up to her face, reflecting back a telegraph pole
+- name: 2020-02-24-amanda-jtree-bottomless.jpg
+  alt-text: a photograph of a woman from the side, sitting in a chair with her back
+    on one of the arms and her legs resting on the other, in front of a desert cabin,
+    wearing just a dark green floral print top, in strong light, her face turned toward
+    the camera
 - name: 2020-02-24-amanda-29-palms-coffee.jpg
   alt-text: a photograph of a woman wrapped in a blanket, crouched against a pink
     brick wall, in a patch of strong sunlight, clutching a cup of coffee in one hand,
