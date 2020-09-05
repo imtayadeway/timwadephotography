@@ -3,17 +3,18 @@ layout: default
 title: home
 ---
 
-{% assign categories = site.data | sort %}
-{% for category in categories %}
+{% for image in site.data.thumbs %}
   {% cycle  '<div class="row">', '', '' %}
     <div class="col-md-3">
-      <div class="card bg-dark text-white">
-        <img class="img-fluid img-thumbnail" src="{{ site.bucket_url }}/{{ category[1][0].name }}" />
-        <!-- alt="{ category[1][0].alt-text }"/> -->
-        <div class="card-img-overlay">
-          <p class="card-title">{{ category[0] }}</p>
+      <a href="/images/{{ image.category }}">
+        <div class="card bg-dark text-white" style="margin: 15px 0px;">
+          <img class="img-fluid img-thumbnail" src="{{ site.bucket_url }}/{{ image.name }}" />
+          <!-- alt="{ category[1][0].alt-text }"/> -->
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ image.category }}</h5>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   {% cycle '', '', '</div>' %}
 {% endfor %}

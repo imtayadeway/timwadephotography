@@ -1,0 +1,19 @@
+---
+- category: abstract
+  name: thumbs-abstract.jpg
+- category: floral
+  name: thumbs-floral.jpg
+- category: landscapes
+  name: thumbs-landscapes.jpg
+- category: nature
+  name: thumbs-nature.jpg
+- category: personal
+  name: thumbs-personal.jpg
+- category: polaroids
+  name: thumbs-polaroids.jpg
+- category: portraits
+  name: thumbs-portraits.jpg
+- category: self
+  name: thumbs-self.jpg
+- category: skyscapes
+  name: thumbs-skyscapes.jpg
