@@ -11,7 +11,7 @@ title: home
           <img class="img-fluid img-thumbnail" src="{{ site.bucket_url }}/{{ image.name }}" />
           <!-- alt="{ category[1][0].alt-text }"/> -->
           <div class="card-img-overlay">
-            <h5 class="card-title">{{ image.category }}</h5>
+            <p class="h5 card-title">{{ image.category }}</p>
           </div>
         </div>
       </a>
