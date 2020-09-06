@@ -5,7 +5,7 @@ title: home
 
 {% for image in site.data.thumbs %}
   {% cycle  '<div class="row">', '', '' %}
-    <div class="col-md-3">
+    <div class="col-sm-4">
       <a href="/images/{{ image.category }}">
         <div class="card bg-dark text-white" style="margin: 15px 0px;">
           <img class="img-fluid img-thumbnail" src="{{ site.bucket_url }}/{{ image.name }}" />
