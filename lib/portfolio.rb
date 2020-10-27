@@ -5,7 +5,7 @@ require "portfolio/photo"
 require "portfolio/resizer"
 
 module Portfolio
-  BUCKET_NAME = "mayatideway"
+  BUCKET_NAME = "timwadephotography"
   TMP_DIR = File.expand_path(File.join(__dir__, "..", "tmp"))
   DATA_DIR = File.expand_path(File.join(__dir__, "..", "_data"))
 
