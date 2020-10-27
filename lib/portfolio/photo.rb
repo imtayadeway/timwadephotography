@@ -1,6 +1,6 @@
 require "mini_exiftool"
 
-module Mayatideway
+module Portfolio
   class Photo
     attr_reader :alt_text, :name, :path
 

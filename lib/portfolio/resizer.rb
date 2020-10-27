@@ -1,6 +1,6 @@
 require "fileutils"
 
-module Mayatideway
+module Portfolio
   class Resizer
     COMMAND = lambda do |infn, outfn|
       <<~EOF

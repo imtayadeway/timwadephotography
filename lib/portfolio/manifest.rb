@@ -1,6 +1,6 @@
 require "yaml"
 
-module Mayatideway
+module Portfolio
   class Manifest
     attr_reader :category
 

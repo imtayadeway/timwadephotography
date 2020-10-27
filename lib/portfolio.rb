@@ -1,10 +1,10 @@
 require "bundler/setup"
-require "mayatideway/linode_client"
-require "mayatideway/manifest"
-require "mayatideway/photo"
-require "mayatideway/resizer"
+require "portfolio/linode_client"
+require "portfolio/manifest"
+require "portfolio/photo"
+require "portfolio/resizer"
 
-module Mayatideway
+module Portfolio
   BUCKET_NAME = "mayatideway"
   TMP_DIR = File.expand_path(File.join(__dir__, "..", "tmp"))
   DATA_DIR = File.expand_path(File.join(__dir__, "..", "_data"))

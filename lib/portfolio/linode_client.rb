@@ -1,4 +1,4 @@
-module Mayatideway
+module Portfolio
   class LinodeClient
     attr_reader :bucket
 

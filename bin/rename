@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH << File.join(__dir__, "..", "lib")
-require "mayatideway"
+require "portfolio"
 
 HELP = <<~EOF
   Usage: bin/rename <category> <old.jpg> <new.jpg>
 EOF
 
 if (0..2).map { |n| ARGV[n] }.none?(&:nil?)
-  Mayatideway.rename(
+  Portfolio.rename(
     category: ARGV[0],
     old_name: ARGV[1],
     new_name: ARGV[2]
