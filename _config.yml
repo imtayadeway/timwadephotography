@@ -1,6 +1,6 @@
 url: "timwade.photography" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "Tim Wade Photography" # the name of your site, e.g. ACME Corp.
+title: "tim wade photography" # the name of your site, e.g. ACME Corp.
 exclude:
   - bin
   - lib
